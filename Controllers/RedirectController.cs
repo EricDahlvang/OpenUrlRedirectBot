@@ -12,7 +12,7 @@ namespace OpenUrlRedirectBot.Controllers
     public class RedirectController : ControllerBase
     {
         [HttpGet]
-        public IActionResult PostAsync(string url)
+        public IActionResult Get(string url)
         {
             // TODO: Log url here
             return Redirect(url);
