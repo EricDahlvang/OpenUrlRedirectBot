@@ -35,11 +35,35 @@ Steps to enable redirecting OpenUrl links:
 
 - Templatize the Adaptive Card:
 ```json
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.2",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "This card's action will open a URL"
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.OpenUrl",
+      "title": "Microsoft",
+      "url": "[baseurl]?url=https://www.microsoft.com"
+    },
+    {
+      "type": "Action.OpenUrl",
+      "title": "Google",
+      "url": "[baseurl]?url=https://www.google.com"
+    },
     {
       "type": "Action.OpenUrl",
       "title": "Amazon",
       "url": "[baseurl]?url=https://www.amazon.com"
     }
+  ]
+}
+    
 ```
 
 - Replace the `[baseurl]` with the redirect controller path:
